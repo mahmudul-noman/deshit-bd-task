@@ -61,45 +61,43 @@ export default function Resume() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Education */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <GraduationCap className="text-[#ffc107]" size={32} />
-              My Education
-            </h3>
-            <div className="space-y-6">
-              {education.map((item, index) => (
-                <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg relative">
-                  <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
-                    {item.period}
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{item.degree}</h4>
-                  <p className="text-[#ffc107] mb-3">{item.institution}</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+        {/* Education Cards */}
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-8 flex items-center justify-center gap-3">
+            <GraduationCap className="text-[#ffc107]" size={32} />
+            My Education
+          </h3>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {education.map((item, index) => (
+              <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg relative shadow-md shadow-blue-50 transition-shadow">
+                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
+                  {item.period}
                 </div>
-              ))}
-            </div>
+                <h4 className="text-xl font-bold text-white mb-2">{item.degree}</h4>
+                <p className="text-[#ffc107] mb-3">{item.institution}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Experience */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <Briefcase className="text-[#ffc107]" size={32} />
-              My Experience
-            </h3>
-            <div className="space-y-6">
-              {experience.map((item, index) => (
-                <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg relative">
-                  <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
-                    {item.period}
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{item.position}</h4>
-                  <p className="text-[#ffc107] mb-3">{item.company}</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+        {/* Experience Cards */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-white mb-8 flex items-center justify-center gap-3">
+            <Briefcase className="text-[#ffc107]" size={32} />
+            My Experience
+          </h3>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {experience.map((item, index) => (
+              <div key={index} className="bg-[#1a1a1a] p-6 shadow-blue-50 rounded-lg relative shadow-md transition-shadow">
+                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
+                  {item.period}
                 </div>
-              ))}
-            </div>
+                <h4 className="text-xl font-bold text-white mb-2">{item.position}</h4>
+                <p className="text-[#ffc107] mb-3">{item.company}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
