@@ -2,9 +2,10 @@
 
 ## 🧠 Tech Stack
 
-* **React.js** — Frontend framework
-* **Tailwind CSS** — Utility-first CSS framework
+* **React.js - ^19 & Next.js - 15.2.4** — Frontend framework
 * **TypeScript** — Type-safe JavaScript
+* **Tailwind CSS** — Utility-first CSS framework
+* **Framer-Motion** — Animation
 * **HTML & CSS** — For structure and base styling
 
 ---

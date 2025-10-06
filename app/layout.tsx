@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -13,7 +12,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "CodeC - Professional Web Designer & Developer",
   description: "Professional Web Designer & Management Developer Portfolio",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -25,7 +23,6 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased">
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <Analytics />
       </body>
     </html>
   )
