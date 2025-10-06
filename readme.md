@@ -69,6 +69,4 @@ If you have any questions, contact:
 
 ---
 
-Good luck with your submission! 🚀
-
 
