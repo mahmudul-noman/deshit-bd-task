@@ -24,9 +24,7 @@ cd deshit-bd-task
 ### 2️⃣ Install dependencies
 
 ```bash
-npm install
-# or
-pnpm install
+npm install -f
 ```
 
 ### 3️⃣ Run the development server
