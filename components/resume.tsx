@@ -70,7 +70,7 @@ export default function Resume() {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {education.map((item, index) => (
               <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg relative shadow-md shadow-blue-50 transition-shadow">
-                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded-2xl mb-3">
                   {item.period}
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2">{item.degree}</h4>
@@ -90,7 +90,7 @@ export default function Resume() {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {experience.map((item, index) => (
               <div key={index} className="bg-[#1a1a1a] p-6 shadow-blue-50 rounded-lg relative shadow-md transition-shadow">
-                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded mb-3">
+                <div className="inline-block bg-[#ffc107] text-black text-xs font-bold px-3 py-1 rounded-2xl mb-3">
                   {item.period}
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2">{item.position}</h4>
