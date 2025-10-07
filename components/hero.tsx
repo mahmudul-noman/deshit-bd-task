@@ -27,17 +27,26 @@ export default function Hero() {
               specializing in creating stylish, modern websites, web services
               and online stores.
             </p>
+
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="bg-[#ffc107] hover:bg-[#ffb800] text-black font-semibold px-8 py-6 text-base">
-                <Download className="mr-2" size={20} />
-                Download CV
-              </Button>
               <Button
                 variant="outline"
-                className="border-[#ffc107] text-[#ffc107] hover:bg-[#ffc107] hover:text-black font-semibold px-8 py-6 text-base bg-transparent"
+                className="relative border-0 text-white hover:text-white font-semibold px-8 py-6 text-base overflow-hidden group rounded-none cursor-pointer"
+                style={{ backgroundColor: "#EE5B6E" }}
               >
-                <Mail className="mr-2" size={20} />
-                Contact
+                <span className="absolute inset-y-0 left-0 w-1/2 bg-black transition-all duration-500 ease-in-out group-hover:left-1/2"></span>
+                <Download className="mr-2 relative z-10" size={20} />
+                <span className="relative z-10">Download CV</span>
+              </Button>
+
+              <Button
+                variant="outline"
+                className="relative border-0 text-white hover:text-white font-semibold px-8 py-6 text-base overflow-hidden group rounded-none cursor-pointer"
+                style={{ backgroundColor: "#EE5B6E" }}
+              >
+                <span className="absolute inset-y-0 left-0 w-1/2 bg-black transition-all duration-500 ease-in-out group-hover:left-1/2"></span>
+                <Mail className="mr-2 relative z-10" size={20} />
+                <span className="relative z-10">Contact</span>
               </Button>
             </div>
           </div>

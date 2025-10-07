@@ -57,7 +57,7 @@ npm run preview
 
 ## ✅ Final Submission
 
-1. **GitHub repository link** — example: `https://github.com/mahmudul-noman/deshit-bd-task.git`
+1. **GitHub repository link** `https://github.com/mahmudul-noman/deshit-bd-task.git`
 
 ---
 
