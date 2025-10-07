@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,30 +13,39 @@ export default function Contact() {
     phone: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Handle form submission
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
-    <section id="contact" className="py-20 bg-[#2d2d2d]">
+    <motion.section
+      id="contact"
+      className="py-20 bg-[#2d2d2d]"
+      initial={{ opacity: 0, y: 50 }} // Start slightly below
+      animate={{ opacity: 1, y: 0 }} // Animate to normal position
+      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+    >
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Contact Me
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text.
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text.
           </p>
         </div>
 
@@ -90,17 +98,19 @@ export default function Contact() {
               className="bg-[#1a1a1a] border-gray-700 text-white placeholder:text-gray-500 focus:border-[#ffc107] resize-none"
               required
             />
-            <div className="text-center">
+            <div>
               <Button
-                type="submit"
-                className="bg-[#ffc107] hover:bg-[#ffb800] text-black font-semibold px-12 py-6 text-base"
+                variant="outline"
+                className="relative border-0 text-white hover:text-white font-semibold px-8 py-6 text-base overflow-hidden group rounded-none cursor-pointer"
+                style={{ backgroundColor: "#EE5B6E" }}
               >
-                Send Message
+                <span className="absolute inset-y-0 left-0 w-1/2 bg-black transition-all duration-500 ease-in-out group-hover:left-1/2"></span>
+                <span className="relative z-10">Send Message</span>
               </Button>
             </div>
           </form>
         </div>
       </div>
-    </section>
-  )
+    </motion.section>
+  );
 }
