@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import CountUp from "react-countup";
 
 const stats = [
   { number: "589", label: "Projects" },
@@ -95,26 +96,30 @@ export default function About() {
               </div>
             </div>
           </motion.div>
-
+          
           {/* Right Side (Stats Grid) */}
           <motion.div
             className="grid grid-cols-2 gap-6 md:gap-8"
-            initial={{ opacity: 0, y: 100 }} // start from bottom
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }} // faster than left (0.8)
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 className="bg-[#1a1a1a] rounded-md p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-300"
-                initial={{ opacity: 0, y: 50 }} // each item also rises slightly
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
                 <div className="text-4xl md:text-5xl font-bold text-[#ffc107] mb-2">
-                  {stat.number}
+                  <CountUp
+                    end={parseInt(stat.number)}
+                    duration={2}
+                    separator=","
+                  />
                 </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
               </motion.div>
